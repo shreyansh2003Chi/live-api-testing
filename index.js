@@ -1,11 +1,11 @@
 const express = require("express");
-const router_work = require("./router/work");
-
 const app = express();
+const PORT = process.env.PORT | 5000;
 
-app.use("/work", router_work);
+app.get("/", (req, res) => {
+  res.json({ message: "HELLO I AM FROM BACKEND..........." });
+});
 
-
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(PORT, () => {
+  console.log("server is listening on port number: ${PORT}.....");
 });
